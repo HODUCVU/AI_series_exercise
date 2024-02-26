@@ -1,0 +1,124 @@
+ 
+
+      
+# def get_pixel(img, center, x, y): 
+      
+#     new_value = 0
+      
+#     try: 
+#         # If local neighbourhood pixel  
+#         # value is greater than or equal 
+#         # to center pixel values then  
+#         # set it to 1 
+#         if img[x][y] >= center: 
+#             new_value = 1
+              
+#     except: 
+#         # Exception is required when  
+#         # neighbourhood value of a center 
+#         # pixel value is null i.e. values 
+#         # present at boundaries. 
+#         pass
+      
+#     return new_value 
+   
+# # Function for calculating LBP 
+# def lbp_calculated_pixel(img, x, y): 
+   
+#     center = img[x][y] 
+   
+#     val_ar = [] 
+      
+#     # top_left 
+#     val_ar.append(get_pixel(img, center, x-1, y-1)) 
+      
+#     # top 
+#     val_ar.append(get_pixel(img, center, x-1, y)) 
+      
+#     # top_right 
+#     val_ar.append(get_pixel(img, center, x-1, y + 1)) 
+      
+#     # right 
+#     val_ar.append(get_pixel(img, center, x, y + 1)) 
+      
+#     # bottom_right 
+#     val_ar.append(get_pixel(img, center, x + 1, y + 1)) 
+      
+#     # bottom 
+#     val_ar.append(get_pixel(img, center, x + 1, y)) 
+      
+#     # bottom_left 
+#     val_ar.append(get_pixel(img, center, x + 1, y-1)) 
+      
+#     # left 
+#     val_ar.append(get_pixel(img, center, x, y-1)) 
+       
+#     # Now, we need to convert binary 
+#     # values to decimal 
+#     power_val = [1, 2, 4, 8, 16, 32, 64, 128] 
+   
+#     val = 0
+      
+#     for i in range(len(val_ar)): 
+#         val += val_ar[i] * power_val[i] 
+          
+#     return val 
+   
+# path = 'mango_parttern.jpg'
+# img_bgr = cv2.imread(path, 1) 
+   
+# height, width, _ = img_bgr.shape 
+   
+# # We need to convert RGB image  
+# # into gray one because gray  
+# # image has one channel only. 
+# img_gray = cv2.cvtColor(img_bgr, 
+#                         cv2.COLOR_BGR2GRAY) 
+   
+# # Create a numpy array as  
+# # the same height and width  
+# # of RGB image 
+# img_lbp = np.zeros((height, width), 
+#                    np.uint8) 
+   
+# for i in range(0, height): 
+#     for j in range(0, width): 
+#         img_lbp[i, j] = lbp_calculated_pixel(img_gray, i, j) 
+  
+# plt.imshow(img_bgr) 
+# plt.show() 
+   
+# plt.imshow(img_lbp, cmap ="gray") 
+# plt.show() 
+# print("LBP Program is finished") ;47;22;0;8;1_
+
+
+
+def image_to_binary_grid(threshold=127):
+    # Đọc hình ảnh từ đường dẫn
+    image = cv2.imread("Aletter.png", cv2.IMREAD_GRAYSCALE)
+    
+    # Áp dụng ngưỡng để chuyển đổi thành ảnh nhị phân
+    _, binary_image = cv2.threshold(image, threshold, 1, cv2.THRESH_BINARY_INV)
+    
+    # Chia ảnh nhị phân thành lưới
+    # Ở đây, bạn có thể chọn kích thước của mỗi ô trong lưới tùy ý
+    # Ví dụ: 10x10, 20x20, ...
+    cell_size = 10
+    height, width = binary_image.shape
+    
+    binary_grid = np.zeros((height // cell_size, width // cell_size), dtype=int)
+    
+    for i in range(0, height, cell_size):
+        for j in range(0, width, cell_size):
+            cell = binary_image[i:i+cell_size, j:j+cell_size]
+            if np.mean(cell) > 127:  # Tính trung bình giá trị pixel của ô
+                binary_grid[(i // cell_size)- 1, (j // cell_size) - 1] = 1
+
+    return binary_grid
+
+def print_binary_grid(binary_grid):
+    for row in binary_grid:
+        print(row)
+        
+        
