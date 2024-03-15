@@ -1,0 +1,5 @@
+release version on colab: https://colab.research.google.com/notebooks/relnotes.ipynb#scrollTo=BgZdELvkMOOQ
+
+fix tensorflow version (perhaps): https://stackoverflow.com/questions/73215696/did-colab-suspend-tensorflow-1-x
+
+Vấn đề là code của dự án sử dụng tensorflow version 1.x, nhưng google colab thì lại không hỗ trợ version này nữa mà chuyển sang version 2.8->..., điều đó dẫn đến một số modules và libraries không còn được hỗ trợ dẫn đến khó khăn trong quá trình fix error.
