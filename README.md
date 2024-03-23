@@ -1,2 +1,2 @@
-# Please Read file Report for this exercise:
-* Link here: [Report_Hu's_moment.pdf](Report_Hu's_moment.pdf)
+# Please read report for this exersice
+* Link here: [Report Histogram of Oriented Gradient Methob](Report_HOG.pdf)
