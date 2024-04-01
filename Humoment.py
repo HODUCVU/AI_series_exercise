@@ -101,22 +101,22 @@ def Template_matching(S1, S2):
 # Pre-processing image input
 print("\nPre-processing input")
 # Image train
-path_image = 'images/mangowithblackground.jpg'
+path_image = 'images/im0.jpeg'
 image = cv2.imread(path_image, cv2.IMREAD_GRAYSCALE)
-image_resize = cv2.resize(image,(90,90))
-binnaryImage = convert_to_binary(image_resize)
+# image_resize = cv2.resize(image,(90,90))
+binnaryImage = convert_to_binary(image)
 grid, w, h = Image_to_grid(binnaryImage)
 # Image detect 1
 path_image_detect_1 = 'images/mangotest4.jpg'
 image_detect_1 = cv2.imread(path_image_detect_1, cv2.IMREAD_GRAYSCALE)
-image_resize_detect_1 = cv2.resize(image_detect_1,(90,90))
-binnaryImage_detect_1 = convert_to_binary(image_resize_detect_1)
+# image_resize_detect_1 = cv2.resize(image_detect_1,(90,90))
+binnaryImage_detect_1 = convert_to_binary(image_detect_1)
 grid_detect_1, w_detect_1, h_detect_1 = Image_to_grid(binnaryImage_detect_1)
 # Image detect 2
 path_image_detect_2 = 'images/chillitest2.jpg'
 image_detect_2 = cv2.imread(path_image_detect_2, cv2.IMREAD_GRAYSCALE)
-image_resize_detect_2 = cv2.resize(image_detect_2,(90,90))
-binnaryImage_detect_2 = convert_to_binary(image_resize_detect_2)
+# image_resize_detect_2 = cv2.resize(image_detect_2,(90,90))
+binnaryImage_detect_2 = convert_to_binary(image_detect_2)
 grid_detect_2, w_detect_2, h_detect_2 = Image_to_grid(binnaryImage_detect_2)
 
 # Result pre-processing input
