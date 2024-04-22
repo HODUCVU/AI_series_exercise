@@ -8,3 +8,4 @@ This is repository for *AI series exercise* that I and my group practice on Scho
 * [Detect objects by using K-means clustering method](https://github.com/HODUCVU/AI_series_exercise/tree/k-means-clustering)
 * [Object tracking using Gaussian Mixture Model](https://github.com/HODUCVU/AI_series_exercise/tree/GMM)
 * [Classification Object using KNN method](https://github.com/HODUCVU/AI_series_exercise/tree/KNN-method?tab=readme-ov-file)
+* [Filter moving objects using GMM method](https://github.com/HODUCVU/AI_series_exercise/tree/GMM)
