@@ -3,11 +3,11 @@
 * [Goups Report](./GMM_Method_Report.pdf)
 # Result:
 * Original Frame:
-![](/images/frame210-original.jpg)
+	![](/images/frame210-original.jpg)
 * Using GMM to detect moving objects:
-![](/images/frame210-GMM.jpg)
+	![](/images/frame210-GMM.jpg)
 * Filter Frame with different between original and GMM frames:
-![](/images/frame210-filter.jpg)
+	![](/images/frame210-filter.jpg)
 # Code
 * Click this [link](https://colab.research.google.com/drive/122Ac84juP3fuRvd7gfSCzr9LH9wztrqm?usp=sharing&fbclid=IwAR0AnTNqSlz53vGw5T73OXXS0raLIjRdtpjEpcf6QugVls6ZSEwR_T-daGQ#scrollTo=0-43RadzR6ZW).
 ## References
